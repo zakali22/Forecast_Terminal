@@ -1,4 +1,6 @@
 const http = require('http');
+const https = require('https');
+const api = require('./api.json');
 const args = process.argv;
 
 let location = args[2];
@@ -9,8 +11,7 @@ const output = () => {
 };
 
 const loc = (postcode) => {
-  const customUrl = `http://api.openweathermap.org/data/2.5/weather?q=${postcode}&APPID=17f62b6dbcccbfc5051fd5af0e7a8c05
-`;
+  const customUrl = `http://api.openweathermap.org/data/2.5/weather?q=${postcode}&APPID=${api.key}`;
   http.get(customUrl, (response) => {
     let fullBody = "";
     response.on('data', (data) => {
