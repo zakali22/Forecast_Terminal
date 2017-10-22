@@ -23,3 +23,5 @@ const loc = (postcode) => {
     });
   });
 };
+
+module.exports = loc;
